@@ -4,8 +4,16 @@
   nav {
     display: none !important;
   }
+
+  body {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 @page {
+  margin: 0;
   size: A4 landscape;
 }
