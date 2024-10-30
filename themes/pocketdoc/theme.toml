@@ -3,15 +3,16 @@
 
 name = "pocketdoc"
 license = "MIT"
-licenselink = "https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme/blob/main/LICENSE"
-description = "A boilerplate starter theme using Tailwind CSS."
-homepage = "https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme"
-tags = ["Hugo", "Tailwind CSS", "theme", "starter", "boilerplate"]
+licenselink = "https://github.com/Simon-Martens/doc/LICSENSE.md"
+description = "A theme to generate printable documentation."
+homepage = "https://github.com/Simon-Martens/doc"
+tags = ["Hugo", "Tailwind", "theme" ] 
 features = []
 min_version = "0.88.0"
 
+sectionPagesMenu = 'main'
 pluralizeListTitles = false
 
 [author]
-  name = "Dirk Olbrich"
-  homepage = "https://github.com/dirkolbrich/"
+  name = "Simon Martens"
+  homepage = "https://github.com/Simon-Martens/"

@@ -5,3 +5,12 @@
 {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end -}}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+{{- $codecss := resources.Get "css/code.css" -}}
+{{- $codecss = $codecss | minify | fingerprint | resources.PostProcess -}}
+<link rel="stylesheet" href="{{ $codecss.RelPermalink }}">
+
+
+{{- $printcss := resources.Get "css/print.css" -}}
+{{- $printcss = $printcss | minify | fingerprint | resources.PostProcess -}}
+<link rel="stylesheet" href="{{ $printcss.RelPermalink }}">

@@ -1,5 +1,9 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
+languageCode = 'de-DE'
 title = 'My New Hugo Site'
-
 theme = 'pocketdoc'
+
+[markup]
+	[markup.highlight]
+		codeFences = true
+		noClasses = false

@@ -1,3 +1,37 @@
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+{{- define "partials/inline/menu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu .}}
+      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    <li>
+      <a
+        {{- range $k, $v := $attrs }}
+          {{- with $v }}
+            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{- end }}
+        {{- end -}}
+      >{{ $name }}</a>
+      {{- with .Children }}
+        <ul>
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      {{- end }}
+    </li>
+  {{- end }}
+{{- end }}
+
 <header class="mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 py-6">
     {{/* CSS functionality for menu toggle */}}
     <style type="text/css">
@@ -36,16 +70,14 @@
         </label>
 
         <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden mt-2 sm:mt-0 sm:space-x-2">
-            {{ with .Site.GetPage "/about" }}
-            <li>
-                <a href="{{ .Permalink }}" class="hover:text-sky-500 dark:hover:text-sky-500">{{ .Title }}</a>
-            </li>
-            {{ end }}
-            {{ range .Site.Sections }}
-            <li>
-                <a href="{{ .Permalink }}" class="hover:text-sky-500 dark:hover:text-sky-500">{{ .Title }}</a>
-            </li>
-            {{ end }}
+            {{- with index site.Menus $menuID }}
+              <nav>
+                <ul>
+                  {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+                </ul>
+              </nav>
+            {{- end }}
+
             <li>
                 {{ partial "themetoggler.html" . }}
             </li>
