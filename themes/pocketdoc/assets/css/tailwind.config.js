@@ -7,6 +7,10 @@ module.exports = {
     "./content/**/*.html",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Fira Sans", "Inter", "sans-serif"],
+      mono: ["Fira Mono", "Fira Code", "monospace"],
+    },
     extend: {},
   },
   plugins: [

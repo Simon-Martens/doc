@@ -1,9 +1,9 @@
 baseURL = 'https://example.org/'
 languageCode = 'de-DE'
-title = 'My New Hugo Site'
+title = 'Technik-Einführungen'
 theme = 'pocketdoc'
 
 [markup]
-	[markup.highlight]
-		codeFences = true
-		noClasses = false
+[markup.highlight]
+codeFences = true
+noClasses = false

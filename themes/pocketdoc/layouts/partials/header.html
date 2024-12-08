@@ -48,14 +48,16 @@
         }
     </style>
 
-    <nav class="flex items-center justify-between flex-wrap">
+    <nav class="flex justify-between flex-wrap">
+    <!--
         <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-slate-800 dark:text-slate-200 font-bold">
             {{ .Site.Title }}
         </a>
+    -->
 
         <input id="nav-toggle" type=checkbox class="hidden">
         <label id="show-button" for="nav-toggle"
-            class="flex items-center sm:hidden text-slate-600 dark:text-slate-400 hover:text-sky-500">
+            class="flex sm:hidden text-slate-600 dark:text-slate-400 hover:text-sky-500">
             <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Menu Open</title>
                 <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
@@ -78,9 +80,7 @@
               </nav>
             {{- end }}
 
-            <li>
-                {{ partial "themetoggler.html" . }}
-            </li>
         </ul>
+        {{ partial "themetoggler.html" . }}
     </nav>
 </header>

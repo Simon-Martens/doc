@@ -2,5 +2,5 @@
 Title: "Git Basics"
 menu:
   main:
-    parent: "Docs"
+    parent: "Einführungen"
 ---

@@ -2,5 +2,5 @@
 Title: "Terminal Basics"
 menu:
   main:
-    parent: "Docs"
+    parent: "Einführungen"
 ---

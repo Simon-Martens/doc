@@ -14,3 +14,8 @@
 {{- $printcss := resources.Get "css/print.css" -}}
 {{- $printcss = $printcss | minify | fingerprint | resources.PostProcess -}}
 <link rel="stylesheet" href="{{ $printcss.RelPermalink }}">
+
+
+{{- $fontcss := resources.Get "css/fonts.css" -}}
+{{- $fontcss = $fontcss | minify | fingerprint | resources.PostProcess -}}
+<link rel="stylesheet" href="{{ $fontcss.RelPermalink }}">

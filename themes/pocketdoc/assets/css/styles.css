@@ -5,6 +5,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+* {
+  font-family: "Fira Sans", "PT Sans", "Inter", sans-serif;
+}
+
 /* Site Specific */
 /* put site specific css styles here using the @layer directive */
 /* see https://tailwindcss.com/docs/functions-and-directives#layer */
@@ -12,4 +16,62 @@
   .welcome-headline {
     @apply text-sky-600;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold pb-3 text-lg;
+  }
+
+  p,
+  ul,
+  ol {
+    @apply pb-2;
+  }
+
+  code {
+    @apply inline-block !hyphens-none dark:bg-gray-800 dark:text-gray-200 px-1;
+  }
+
+  article {
+    @apply text-lg;
+  }
+
+  article a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude javascript only links */
+  [href^="javascript:" i],  
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* TODO: enter domain */
+  [href*="//git-dok.com"],
+))::before {
+    content: "→ ";
+  }
+
+  article p a,
+  article li a {
+    @apply decoration-dotted underline hover:decoration-solid;
+  }
+
+  article ul {
+    @apply max-w-md space-y-1 text-gray-800 list-disc list-inside dark:text-gray-200;
+  }
+}
+
+nav .ancestor {
+  @apply !italic dark:text-red-500 text-red-800 font-bold;
+}
+
+nav a[aria-current="page"] {
+  @apply dark:text-red-300 text-red-800 pointer-events-none;
+}
+
+nav a:not(nav a.ancestor):hover::after {
+  content: " →";
+  @apply dark:text-red-300 text-red-800;
 }
