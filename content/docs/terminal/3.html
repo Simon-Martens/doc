@@ -1,0 +1,83 @@
++++
+date = '2024-10-28T18:12:26+01:00'
+page = 3
+draft = false
+title = 'Befehle'
++++
+
+<div class="grid grid-cols-3 gap-5 grid-flow-dense">
+	<div class="befehlsliste">
+		<h3>Arbeitsverzeichnis wechseln</h3>
+		{{< highlight bash>}}cd <pfad>{{< / highlight>}}
+					<p>Mit <code>cd</code> (change directory) kann man das Arbeitsverzeichnis wechseln. Der Pfad kann absolut
+						(wie in <code>&gt; cd C:/Users/User/Documents</code>) oder relativ (wie in <code>&gt; cd Documents</code>)
+						sein.
+					<p>Besondere Bedutung haben die Pfade <code>.</code> und <code>..</code>.<br><code>.</code> zeigt auf das
+						aktuelle
+						Verzeichnis, <code>&gt; cd .</code> macht also nichts. <code>..</code> zeigt
+						auf das übergeordnete Verzeichnis, <code>&gt; cd ..</code> wechselt also in das übergeordnete Verzeichnis.
+	</div>
+
+	<div class="befehlsliste">
+		<h3>Verzeichnis auflisten</h3>
+		{{< highlight bash>}}ls [-a] [-l] [pfad]{{< / highlight>}}
+				{{< highlight powershell>}}dir{{< / highlight>}}
+						<p>Den Inhalt eines Verzeichnisses auflisten. Die Option <code>-a</code> zeigt auch versteckte Dateien an,
+							<code>-l</code> die Listenansicht. Windows zeigt die Listenansicht standardmäßig an, Linux und Mac die
+							Kurzansicht.
+							zeigt mehr Informationen an. Ohne Pfad wird das aktuelle Verzeichnis aufgelistet.
+	</div>
+
+	<div class="befehlsliste">
+		<h3>Verzeichnis erstellen</h3>
+		{{< highlight bash>}}mkdir <pfad>{{< / highlight>}}
+					<p>Mit <code>mkdir</code> (make directory) kann man ein neues Verzeichnis erstellen. Der Pfad kann absolut
+						oder relativ
+						sein.
+	</div>
+
+
+	<div class="befehlsliste">
+		<h3>Neue Datei erstellen</h3>
+		{{< highlight bash>}}touch <datei>{{< / highlight>}}
+					{{< highlight powershell>}}ni <datei>{{< / highlight>}}
+								<p>Erstellt eine leere Datei unter dem angegebenen Pfad.
+	</div>
+
+
+	<div class="befehlsliste">
+		<h3>Datei verschieben</h3>
+		{{< highlight bash>}}mv
+			<source>
+			<dest>{{< / highlight>}}
+					<p>Einen Ordner oder eine Datei verschieben. <code>&lt;source&gt;</code> ist der Quellpfad,
+						<code>&lt;dest&gt;</code>
+						der Zielort.
+	</div>
+
+
+	<div class="befehlsliste">
+		<h3>Datei löschen</h3>
+		{{< highlight bash>}}rm [-r] <node>{{< / highlight>}}
+					<p>Das Verzeichnis oder die Datei<code>
+							&lt;node&gt;
+						</code> löschen. Die Option <code>-r</code> löscht rekursiv, also auch Verzeichnisse und deren Inhalt,
+						unter Windows muss man zum Löschen von Verzeichnissen stattdessen
+						{{< highlight powershell>}}rmdir <node>{{< / highlight>}}
+									verwenden. Vorsicht! Gelöschte Dateien können nicht einfach wiederhergestellt werden.
+	</div>
+
+	<div class="befehlsliste">
+		<h3>Inhalt der Datei ausgeben</h3>
+		{{< highlight bash>}}cat <datei>{{< / highlight>}}
+					<p>Inhalt der Datei <code>&lt;datei&gt;</code> ausgeben.
+	</div>
+
+
+	<div class="befehlsliste">
+		<h3>Exit</h3>
+		{{< highlight bash>}}exit{{< / highlight>}}
+				<p>Das Terminal schließen.
+	</div>
+
+</div>

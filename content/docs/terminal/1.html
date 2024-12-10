@@ -1,0 +1,59 @@
++++
+date = '2024-10-28T18:12:26+01:00'
+page = 1
+draft = false
+title = 'Terminal Basics'
++++
+
+<div class="grid grid-cols-3 gap-6">
+	<div>
+		<h3>Hilfe</h3>
+		<p>Kurzhilfe für die Verwendung eines Befehls kann man in der Regel auf unterschiedliche Art abfragen:</p>
+		<ul>
+			<li>Windows: <code>git /?</code></li>
+			<li>Linux &amp; Mac: <code>git --help</code> oder <code>git -h</code></li>
+		</ul>
+
+		<h3>Syntax</h3>
+		In der Hilfe und an dieser Stelle wird die Benutzung oft in einer vereinfachten BNF-Syntax angegeben, die sich an
+		folgendem Muster
+		orientiert:
+		{{< highlight bash>}}befehl [optional] <pflichtparameter>{{< / highlight>}}
+					Optionale Flags und Parameter werden in eckigen Klammern, Platzhalter eigene Parameter in spitzen Klammern
+					angegeben.
+
+					<h3>Begriffe</h3>
+	</div>
+	<div class="col-span-2">
+		<div class="grid grid-cols-2 gap-6">
+			<div class="">
+				<h3><i class="ri-windows-fill"></i>Windows (PowerShell)</h3>
+				<h4>Command Prompt / Befehlszeile:</h4>
+				{{< highlight powershell>}}C:\Users\user>{{< /highlight>}}
+						Windows zeigt den Laufwerksbuchstaben und das Arbeitsverzeichnis an.
+			</div>
+
+			<div>
+				<h3><i class="ri-apple-fill"></i>Linux &amp; Mac (Terminal / zsh bzw. bash)</h3>
+				<h4>Command Prompt / Befehlszeile:</h4>
+				{{< highlight zsh>}}>user@mymac ~ %{{< /highlight>}}
+						{{< highlight bash>}}>user@mylinux:~${{< /highlight>}}
+								Linux und Mac zeigen den Benutzernamen und den Hostnamen an, dann kommt das Arbeitsverzeichnis.
+								Besonderheit: das Home-Verzeichnis des eingeloggten Benutzers wird als <code>~</code> abgekürzt.
+			</div>
+
+			<div>
+				<h4>Kommandos </h4>
+				{{< highlight powershell>}}> befehl /flags parameter{{< /highlight>}}
+						In Windows werden Flags mit einem Schrägstrich <code>/</code> gekennzeichnet. PowerShell akzeptiert an
+						vielen Stellen inzwischen auch die Unix-Schreibweise mit Bindestrich <code>-</code>.
+			</div>
+
+			<div>
+				<h4>Kommandos </h4>
+				{{< highlight bash>}}>$ befehl -flags parameter{{< /highlight>}}
+						In Linux und Mac werden Flags mit einem Bindestrich <code>-</code> gekennzeichnet.
+			</div>
+		</div>
+	</div>
+</div>
