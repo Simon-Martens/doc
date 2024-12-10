@@ -30,7 +30,7 @@ title = 'Befehle'
 
 	<div class="befehlsliste">
 		<h3>Verzeichnis erstellen</h3>
-		{{< highlight bash>}}mkdir <pfad>{{< / highlight>}}
+		{{< highlight bash>}}mkdir [-p] <pfad>{{< / highlight>}}
 					<p>Mit <code>mkdir</code> (make directory) kann man ein neues Verzeichnis erstellen. Der Pfad kann absolut
 						oder relativ
 						sein.
@@ -42,6 +42,7 @@ title = 'Befehle'
 		{{< highlight bash>}}touch <datei>{{< / highlight>}}
 					{{< highlight powershell>}}ni <datei>{{< / highlight>}}
 								<p>Erstellt eine leere Datei unter dem angegebenen Pfad.
+								<p>Ist die Dati vohranden, aktualisiert <code>touch</code> das Änderungsdatum auf die aktuelle Zeit.
 	</div>
 
 
@@ -71,6 +72,15 @@ title = 'Befehle'
 		<h3>Inhalt der Datei ausgeben</h3>
 		{{< highlight bash>}}cat <datei>{{< / highlight>}}
 					<p>Inhalt der Datei <code>&lt;datei&gt;</code> ausgeben.
+	</div>
+
+	<div class="befehlsliste">
+		<h3>Programme starten</h3>
+		Auch grafische Programme können über die Kommandozeile gestartet werden. Der Befehl ist dabei normalerweise der Name des Programms.
+		{{< highlight bash>}}code <node>{{< / highlight>}}
+		<p>Startet Visual Studio Code und öffnet die Datei oder das Verzeichnis <code>&lt;node&gt;</code>.
+		Jedoch ist die Syntax je nach Programm unterschiedlich, manche Programme benötigen zusätzliche Parameter, andere andere Befehle:
+		{{< highlight bash>}}start notepad++ <node>{{< / highlight>}}	
 	</div>
 
 

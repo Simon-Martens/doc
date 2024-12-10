@@ -2,9 +2,57 @@
 date = '2024-10-28T18:12:26+01:00'
 page = 2
 draft = false
-title = 'Begriffe'
+title = 'Begriffe, Tipps und Tricks'
 +++
 
-<div class="grid grid-cols-3">
+<div class="grid grid-cols-2 gap-5">
+	<div>
+		<h3>Arbeitsverzeichnis</h3>
+		<p>Das Arbeitsverzeichnis ist das Verzeichnis, in dem sich der Benutzer gerade befindet. Alle relativen Pfade werden
+			von diesem Verzeichnis aus interpretiert. Jedes Programm, dass im Terminal ausgeführt wird, bekommt automatisch
+			das Arbeitsverzeichnis als Input-Parameter übermittelt.
+		<p>Normalerweise steht das Arbeitsverzeichnis zu Anfang der Kommandozeile, z.B. <code>C:\Users\User</code> oder
+			<code>user@mylinux:~$</code>, aber mit dem Befehl <code>pwd</code> (print working directory) kann man sich den
+			absoluten Pfad zum aktuellen Verzeichnis auch anzeigen lassen.
 
+		<h3>Skript</h3>
+		<p>Ein Shell-Skript ist eine Datei, die eine Abfolge von Terminal-Befehlen enthält. Diese Befehle werden
+			nacheinander ausgeführt, wenn das Skript ausgeführt wird. Shell-Skripte werden häufig verwendet, um wiederkehrende
+			Aufgaben zu automatisieren. In Windows können die Skripte die Endungen <code>.bat</code>, <code>.cmd</code> oder
+			<code>.ps1</code> bzw. <code>.ps2</code> haben.
+			Unter Linux wird normalerweise die Endung <code>.sh</code> verwendet.
+		</p>
+		<p>Vorsicht! Weil Shell-Kommandos direkt auf dem System ausgeführt werden, können Skripte auch Schaden anrichten.
+			Verwenden Sie nur Skripte, die Sie verstehen und denen Sie vertrauen.
+
+
+		<h3>Absolute und relative Pfade</h3>
+		<p>Ein Pfad ist eine Zeichenfolge, die den Speicherort einer Datei oder eines Verzeichnisses auf einem Dateisystem
+			angibt. Es gibt zwei Arten von Pfaden: absolute und relative Pfade.
+		<p>Ein absoluter Pfad beginnt immer am
+			Stammverzeichnis des Dateisystems und enthält den vollständigen Pfad zur Datei oder zum Verzeichnis (in Windows
+			inklusive des Laufwerksbuchstabens), so wie etwa
+			<code>C:\Users\User\.gitconfig</code> oder <code>/etc/passwd</code>.
+		<p>Ein relativer
+			Pfad beginnt im aktuellen Arbeitsverzeichnis und enthält nur den Pfad zur Datei oder zum Verzeichnis relativ zum
+			aktuellen Arbeitsverzeichnis, z.B. <code>Documents\file.txt</code> oder <code>../Pictures/photo.jpg</code>.
+		<p>Alle Befehle, die einen Pfad benötigen, können i.d.R. sowohl absolute als auch relative Pfade verwenden.
+	</div>
+	<div>
+		<div class="befehlsliste">
+			<h3>TAB-Taste</h3>
+			<div clsas="border border-t">
+				<p>Damit man im Teminal nicht alles eintippen muss, vervollständigt die TAB-Taste automatisch Befehle und vor
+					allem
+					Datei- und
+					Verzeichnispfade, wenn ein Teil des Pfades eingegeben wurde. Beispiel: Steht im aktuellen Terminal folgendes:
+					{{< highlight powershell>}}> C:\Users\User\>cd Doc{{< /highlight>}}
+			</div>
+			<p>vervollsständigt die TAB-Taste den Befehl automatisch zu
+				{{< highlight powershell>}}> C:\Users\User\>cd Documents{{< /highlight>}}
+		</div>
+	</div>
+
+
+</div>
 </div>
